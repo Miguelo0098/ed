@@ -58,7 +58,9 @@ namespace ed{
 			return _y;
 		}
 
-		double getLabel();
+		inline int getLabel(){
+			return _label;
+		}
 
 		inline void setX(double x){
 			_x = x;
@@ -76,7 +78,13 @@ namespace ed{
         	#endif //NDEBUG
 		}
 
+		inline void setLabel(int label){
+			_label = label;
 
+			#ifndef NDEBUG
+          		assert(getLabel() == label);
+        	#endif //NDEBUG
+		}
 
 
 		
