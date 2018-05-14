@@ -60,7 +60,7 @@ class Medicion
 			#ifndef NDEBUG
 				// Se comprueba la postcondición
 				assert(getFecha() == fecha);
-				assert(abs(getPrecipitacion() - precipitacion) <= COTA_ERROR);
+				assert(std::abs(getPrecipitacion() - precipitacion) <= COTA_ERROR);
 			#endif //NDEBUG	
 		}
 
@@ -78,7 +78,7 @@ class Medicion
 			#ifndef NDEBUG
 				// Se comprueba la postcondición
 				assert(getFecha() == medicion.getFecha());
-				assert(abs(getPrecipitacion() - medicion.getPrecipitacion()) <= COTA_ERROR);
+				assert(std::abs(getPrecipitacion() - medicion.getPrecipitacion()) <= COTA_ERROR);
 			#endif //NDEBUG
 		}
 
@@ -140,7 +140,7 @@ class Medicion
 
 			#ifndef NDEBUG
 				// Se comprueba la postcondición
-				assert(abs(getPrecipitacion() - precipitacion) <= COTA_ERROR);
+				assert(std::abs(getPrecipitacion() - precipitacion) <= COTA_ERROR);
 			#endif //NDEBUG
 		}
 
@@ -180,7 +180,7 @@ class Medicion
 			#ifndef NDEBUG
 				// Se comprueba la postcondición
 				assert(getFecha() == medicion.getFecha());
-				assert(abs(getPrecipitacion() - medicion.getPrecipitacion()) <= COTA_ERROR);
+				assert(std::abs(getPrecipitacion() - medicion.getPrecipitacion()) <= COTA_ERROR);
 			#endif //NDEBUG
 
 			return(*this);
