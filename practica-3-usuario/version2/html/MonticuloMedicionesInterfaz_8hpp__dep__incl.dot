@@ -1,0 +1,21 @@
+digraph "MonticuloMedicionesInterfaz.hpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node6 [label="MonticuloMedicionesInterfaz.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="MonticuloMediciones.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MonticuloMediciones_8hpp.html",tooltip="Se define el TAD MonticuloMediciones. "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="funcionesAuxiliares.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$funcionesAuxiliares_8hpp.html",tooltip="Funciones auxiliares para el programa principal de la práctica 3. "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="funcionesAuxiliares.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$funcionesAuxiliares_8cpp.html",tooltip="Código de las funciones auxiliares para el programa principal de la práctica 1. "];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="principalMonticulo.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$principalMonticulo_8cpp.html",tooltip="Programa principal de la practica 3 de Estructuras de Datos. "];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="principalMonticulo2.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$principalMonticulo2_8cpp.html",tooltip="Programa principal mejorado de la practica 3 de Estructuras de Datos. "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="MonticuloMediciones.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MonticuloMediciones_8cpp.html",tooltip="Fichero que contiene el código de las funciones de la clase MonticuloMediciones. "];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

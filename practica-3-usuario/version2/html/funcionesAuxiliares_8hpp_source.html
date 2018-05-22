@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estructuras de Datos: Fichero Fuente funcionesAuxiliares.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Estructuras de Datos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">funcionesAuxiliares.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="funcionesAuxiliares_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _FuncionesAuxiliares_HPP_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define _FuncionesAuxiliares_HPP_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MonticuloMediciones_8hpp.html">MonticuloMediciones.hpp</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// SE DEBEN INCLUIR LOS COMENTARIOS DE DOXYGEN</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceed.html">ed</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceed.html#a546d1699e6a9b8dd8d3aa52978a38f06">menu</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#af8eb48ff6e24f3ecab7eeb840dfa5e3d">comprobarMonticuloVacio</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a5a23d6326f367c57efe07c866d645c06">cargarMonticuloDeFichero</a>(std::string <span class="keyword">const</span> &amp; nombreFichero, <a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo); </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a60fdb31a3ee8bbd7eb72c70f5cbee1a0">grabarMonticuloEnFichero</a> (std::string <span class="keyword">const</span> &amp; nombreFichero, <a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> <span class="keyword">const</span> &amp; monticulo); </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a2ebd9056014758f1bc23844fca3579b1">consultarMediciones</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#aca5290d89f264039db64d1c53678c0d4">modificarMedicionMonticulo</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a9ffa568a8012f457a008c2e3f922ad25">borrarTodasMediciones</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a8cec83cc4a462e7a8ca7be78aca49dbe">insertarMedicionMonticulo</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceed.html#a7f72153dc396c5e7d0546f81d956b65d">borrarMedicionMonticulo</a>(<a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> &amp; monticulo);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <span class="comment">// Fin del espacio de nombre de la asignatura: ed</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Fin de _FuncionesAuxiliares_HPP_</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="ttc" id="namespaceed_html_a60fdb31a3ee8bbd7eb72c70f5cbee1a0"><div class="ttname"><a href="namespaceed.html#a60fdb31a3ee8bbd7eb72c70f5cbee1a0">ed::grabarMonticuloEnFichero</a></div><div class="ttdeci">void grabarMonticuloEnFichero(std::string const &amp;nombreFichero, ed::MonticuloMediciones const &amp;monticulo)</div><div class="ttdoc">Carga los datos de un fichero en el monticulo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00124">funcionesAuxiliares.cpp:124</a></div></div>
+<div class="ttc" id="namespaceed_html_a8cec83cc4a462e7a8ca7be78aca49dbe"><div class="ttname"><a href="namespaceed.html#a8cec83cc4a462e7a8ca7be78aca49dbe">ed::insertarMedicionMonticulo</a></div><div class="ttdeci">void insertarMedicionMonticulo(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Inserta una medicion dentro del montículo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00169">funcionesAuxiliares.cpp:169</a></div></div>
+<div class="ttc" id="namespaceed_html_a2ebd9056014758f1bc23844fca3579b1"><div class="ttname"><a href="namespaceed.html#a2ebd9056014758f1bc23844fca3579b1">ed::consultarMediciones</a></div><div class="ttdeci">void consultarMediciones(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Muestra las mediciones del montículo en orden secuencial. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00145">funcionesAuxiliares.cpp:145</a></div></div>
+<div class="ttc" id="namespaceed_html_af8eb48ff6e24f3ecab7eeb840dfa5e3d"><div class="ttname"><a href="namespaceed.html#af8eb48ff6e24f3ecab7eeb840dfa5e3d">ed::comprobarMonticuloVacio</a></div><div class="ttdeci">void comprobarMonticuloVacio(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Comprueba si el montículo está vacía. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00098">funcionesAuxiliares.cpp:98</a></div></div>
+<div class="ttc" id="namespaceed_html"><div class="ttname"><a href="namespaceed.html">ed</a></div><div class="ttdoc">Se incluye la clase MonticuloMediciones dentro del espacio de nombres de la asigantura: ed...</div><div class="ttdef"><b>Definition:</b> <a href="Fecha_8cpp_source.html#l00142">Fecha.cpp:142</a></div></div>
+<div class="ttc" id="MonticuloMediciones_8hpp_html"><div class="ttname"><a href="MonticuloMediciones_8hpp.html">MonticuloMediciones.hpp</a></div><div class="ttdoc">Se define el TAD MonticuloMediciones. </div></div>
+<div class="ttc" id="namespaceed_html_a7f72153dc396c5e7d0546f81d956b65d"><div class="ttname"><a href="namespaceed.html#a7f72153dc396c5e7d0546f81d956b65d">ed::borrarMedicionMonticulo</a></div><div class="ttdeci">void borrarMedicionMonticulo(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Borra la primera de las mediciones del montículo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00179">funcionesAuxiliares.cpp:179</a></div></div>
+<div class="ttc" id="namespaceed_html_a9ffa568a8012f457a008c2e3f922ad25"><div class="ttname"><a href="namespaceed.html#a9ffa568a8012f457a008c2e3f922ad25">ed::borrarTodasMediciones</a></div><div class="ttdeci">void borrarTodasMediciones(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Borra todas las mediciones del montículo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00163">funcionesAuxiliares.cpp:163</a></div></div>
+<div class="ttc" id="namespaceed_html_a546d1699e6a9b8dd8d3aa52978a38f06"><div class="ttname"><a href="namespaceed.html#a546d1699e6a9b8dd8d3aa52978a38f06">ed::menu</a></div><div class="ttdeci">int menu()</div><div class="ttdoc">Muestra el menú del programa principal. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00023">funcionesAuxiliares.cpp:23</a></div></div>
+<div class="ttc" id="namespaceed_html_aca5290d89f264039db64d1c53678c0d4"><div class="ttname"><a href="namespaceed.html#aca5290d89f264039db64d1c53678c0d4">ed::modificarMedicionMonticulo</a></div><div class="ttdeci">void modificarMedicionMonticulo(ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Modifica la primera de las mediciones del montículo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00150">funcionesAuxiliares.cpp:150</a></div></div>
+<div class="ttc" id="classed_1_1MonticuloMediciones_html"><div class="ttname"><a href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a></div><div class="ttdoc">Definición de la clase MonticuloMediciones. </div><div class="ttdef"><b>Definition:</b> <a href="MonticuloMediciones_8hpp_source.html#l00035">MonticuloMediciones.hpp:35</a></div></div>
+<div class="ttc" id="namespaceed_html_a5a23d6326f367c57efe07c866d645c06"><div class="ttname"><a href="namespaceed.html#a5a23d6326f367c57efe07c866d645c06">ed::cargarMonticuloDeFichero</a></div><div class="ttdeci">void cargarMonticuloDeFichero(std::string const &amp;nombreFichero, ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Carga los datos de un fichero en el monticulo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00108">funcionesAuxiliares.cpp:108</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

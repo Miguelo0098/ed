@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estructuras de Datos: Fichero Fuente principalMonticulo.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Estructuras de Datos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">principalMonticulo.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="principalMonticulo_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="funcionesAuxiliares_8hpp.html">funcionesAuxiliares.hpp</a>&quot;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MonticuloMediciones_8hpp.html">MonticuloMediciones.hpp</a>&quot;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Medicion_8hpp.html">Medicion.hpp</a>&quot;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="macros_8hpp.html">macros.hpp</a>&quot;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="principalMonticulo_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="principalMonticulo_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (argc != 3)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Modo de ejecución&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::cout &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot;&lt;fichero-de-mediciones&gt;  &lt;fichero-ordenado&gt; &quot;</span>  &lt;&lt; std::endl;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> -1;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a> monticulo;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string nombreFicheroEntrada(argv[1]);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::string nombreFicheroSalida(argv[2]);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// </span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Se cargan las mediciones desde el fichero &quot;</span> &lt;&lt; nombreFicheroEntrada &lt;&lt; std::endl;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot; Se crea un montículo de máximos &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="namespaceed.html#a5a23d6326f367c57efe07c866d645c06">ed::cargarMonticuloDeFichero</a>(nombreFicheroEntrada,monticulo);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// QUITAR EL COMENTARIO CUANDO SE HAYA CODIFICADO LA FUNCIÓN </span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Tamaño del montículo &quot;</span> &lt;&lt; monticulo.<a class="code" href="classed_1_1MonticuloMediciones.html#a054a2d8d08a1d4e097bb762febdcd302">size</a>() &lt;&lt; std::endl;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Se graba el montículo en el fichero: las mediciones son grabadas en orden descendente</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Se graba el montículo en el fichero &quot;</span> &lt;&lt; nombreFicheroSalida &lt;&lt; std::endl;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Las mediciones son grabadas en orden descendente &quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="namespaceed.html#a60fdb31a3ee8bbd7eb72c70f5cbee1a0">ed::grabarMonticuloEnFichero</a>(nombreFicheroSalida,monticulo);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="ttc" id="principalMonticulo_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="principalMonticulo_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">Programa principal de la práctica 2: montículo de mediciones. </div><div class="ttdef"><b>Definition:</b> <a href="principalMonticulo_8cpp_source.html#l00030">principalMonticulo.cpp:30</a></div></div>
+<div class="ttc" id="namespaceed_html_a60fdb31a3ee8bbd7eb72c70f5cbee1a0"><div class="ttname"><a href="namespaceed.html#a60fdb31a3ee8bbd7eb72c70f5cbee1a0">ed::grabarMonticuloEnFichero</a></div><div class="ttdeci">void grabarMonticuloEnFichero(std::string const &amp;nombreFichero, ed::MonticuloMediciones const &amp;monticulo)</div><div class="ttdoc">Carga los datos de un fichero en el monticulo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00124">funcionesAuxiliares.cpp:124</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html">funcionesAuxiliares.hpp</a></div><div class="ttdoc">Funciones auxiliares para el programa principal de la práctica 3. </div></div>
+<div class="ttc" id="MonticuloMediciones_8hpp_html"><div class="ttname"><a href="MonticuloMediciones_8hpp.html">MonticuloMediciones.hpp</a></div><div class="ttdoc">Se define el TAD MonticuloMediciones. </div></div>
+<div class="ttc" id="classed_1_1MonticuloMediciones_html_a054a2d8d08a1d4e097bb762febdcd302"><div class="ttname"><a href="classed_1_1MonticuloMediciones.html#a054a2d8d08a1d4e097bb762febdcd302">ed::MonticuloMediciones::size</a></div><div class="ttdeci">unsigned int size()</div><div class="ttdoc">Funcion que retorna el tamaño del montículo. </div><div class="ttdef"><b>Definition:</b> <a href="MonticuloMediciones_8hpp_source.html#l00303">MonticuloMediciones.hpp:303</a></div></div>
+<div class="ttc" id="macros_8hpp_html"><div class="ttname"><a href="macros_8hpp.html">macros.hpp</a></div><div class="ttdoc">Macros for the screen. </div></div>
+<div class="ttc" id="Medicion_8hpp_html"><div class="ttname"><a href="Medicion_8hpp.html">Medicion.hpp</a></div><div class="ttdoc">Fichero de la clase Medicion: medición de una estación meteorológica. </div></div>
+<div class="ttc" id="classed_1_1MonticuloMediciones_html"><div class="ttname"><a href="classed_1_1MonticuloMediciones.html">ed::MonticuloMediciones</a></div><div class="ttdoc">Definición de la clase MonticuloMediciones. </div><div class="ttdef"><b>Definition:</b> <a href="MonticuloMediciones_8hpp_source.html#l00035">MonticuloMediciones.hpp:35</a></div></div>
+<div class="ttc" id="namespaceed_html_a5a23d6326f367c57efe07c866d645c06"><div class="ttname"><a href="namespaceed.html#a5a23d6326f367c57efe07c866d645c06">ed::cargarMonticuloDeFichero</a></div><div class="ttdeci">void cargarMonticuloDeFichero(std::string const &amp;nombreFichero, ed::MonticuloMediciones &amp;monticulo)</div><div class="ttdoc">Carga los datos de un fichero en el monticulo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00108">funcionesAuxiliares.cpp:108</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
