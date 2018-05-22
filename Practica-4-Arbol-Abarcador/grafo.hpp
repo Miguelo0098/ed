@@ -8,7 +8,20 @@
 #ifndef GRAFO_HPP
 #define GRAFO_HPP
 
+#include "vertice.hpp"
+#include
 
+namespace ed{
+	class Grafo{
+	private:
+		
+
+	public:
+		Grafo();
+		~Grafo();
+		
+	};
+}
 
 
 #endif
