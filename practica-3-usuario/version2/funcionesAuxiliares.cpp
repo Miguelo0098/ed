@@ -107,6 +107,7 @@ void ed::comprobarMonticuloVacio(ed::MonticuloMediciones & monticulo){
 
 void ed::cargarMonticuloDeFichero(std::string const & nombreFichero, ed::MonticuloMediciones & monticulo) 
 {
+
 	std::cout << "Cargando datos del fichero " << nombreFichero << std::endl;
 	std::ifstream flujo_entrada;
 	flujo_entrada.open(nombreFichero.c_str(), std::ios::in);
@@ -152,6 +153,11 @@ void ed::modificarMedicionMonticulo(ed::MonticuloMediciones & monticulo){
 	double precip_aux = 0.0;
 	std::cout << "Introduzca el nuevo nivel de precipitación: ";
 	std::cin >> precip_aux;
+	if (precip_aux < 0.0)
+	{
+		std::cout << "Error en la precipitación introducida." << std::endl;
+		return;
+	}
 	ed::Medicion medicion = monticulo.top();
 	medicion.setPrecipitacion(precip_aux);
 	monticulo.modify(medicion);
@@ -161,9 +167,15 @@ void ed::modificarMedicionMonticulo(ed::MonticuloMediciones & monticulo){
 }
 
 void ed::borrarTodasMediciones(ed::MonticuloMediciones & monticulo){
-	std::cout << "Borrando todas las mediciones . . ." << std::endl;
-	monticulo.removeAll();
-	std::cout << "Se han borrado con éxito!" << std::endl;
+	if (monticulo.isEmpty() == false)
+	{
+		std::cout << "Borrando todas las mediciones . . ." << std::endl;
+		monticulo.removeAll();
+		std::cout << "Se han borrado con éxito!" << std::endl;
+	}
+	else{
+		std::cout << "No se puede borrar en un montículo vacío!" << std::endl;
+	}
 }
 
 void ed::insertarMedicionMonticulo(ed::MonticuloMediciones & monticulo){
@@ -177,7 +189,14 @@ void ed::insertarMedicionMonticulo(ed::MonticuloMediciones & monticulo){
 
 
 void ed::borrarMedicionMonticulo(ed::MonticuloMediciones & monticulo){
-	std::cout << "Borrando la primera de las mediciones . . ." << std::endl;
-	monticulo.remove();
-	std::cout << "Se ha borrado con éxito!" << std::endl;
+	if (monticulo.isEmpty() == false)
+	{
+		std::cout << "Borrando la primera de las mediciones . . ." << std::endl;
+		monticulo.remove();
+		std::cout << "Se ha borrado con éxito!" << std::endl;
+	}
+	else{
+		std::cout << "No se puede borrar en un montículo vacío!" << std::endl;
+	}
+
 }
