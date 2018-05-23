@@ -66,7 +66,7 @@ namespace ed{
 			_x = x;
 
 			#ifndef NDEBUG
-          		assert(std::abs(getX() - x) <= COTA_ERROR);
+          		assert(std::abs(getX() - x) < COTA_ERROR);
         	#endif //NDEBUG
 		}
 
@@ -74,7 +74,7 @@ namespace ed{
 			_y = y;
 
 			#ifndef NDEBUG
-          		assert(std::abs(getY() - y) <= COTA_ERROR);
+          		assert(std::abs(getY() - y) < COTA_ERROR);
         	#endif //NDEBUG
 		}
 
@@ -85,11 +85,38 @@ namespace ed{
           		assert(getLabel() == label);
         	#endif //NDEBUG
 		}
+		
+		inline vertice & operator=(ed::vertice const &v)
+		{
+			// Se comprueba que no sean el mismo objeto
+			if (this != &v) 
+			{
+				setX(v.getX());
+				setY(v.getY());
 
+				#ifndef NDEBUG
+					// Se comprueba la postcondición
+					assert( std::abs (this->getX() - v.getX()) < COTA_ERROR ); 
+					assert( std::abs (this->getY() - v.getY()) < COTA_ERROR );   
+				#endif //NDEBUG
+			}	
+
+			return *this;
+		}
 		
-		
-		
-	};
+
+		inline bool operator == (ed::Vertice2D const &v) const
+		{
+  			// Se utiliza COTA_ERROR para controlar la precisión de los números reales
+    		return 	(
+    	              	(std::abs (v.getX() - this->getX()) < COTA_ERROR)   
+    	          		and (std::abs (v.getY() - this->getY()) < COTA_ERROR)
+    	        	);
+		}
+
+	}; //Fin de la clase vértice
+
+	double getDistanciaEuclidea(Vertice const & v1, Vertice const & v2);
 
 
 }
