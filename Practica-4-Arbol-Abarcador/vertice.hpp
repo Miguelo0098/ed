@@ -11,7 +11,6 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <string>
 
 define COTA_ERROR 1.0e-6
 
@@ -93,11 +92,13 @@ namespace ed{
 			{
 				setX(v.getX());
 				setY(v.getY());
+				setLabel(v.getLabel());
 
 				#ifndef NDEBUG
 					// Se comprueba la postcondición
 					assert( std::abs (this->getX() - v.getX()) < COTA_ERROR ); 
 					assert( std::abs (this->getY() - v.getY()) < COTA_ERROR );   
+					assert(this->getLabel() == v.getLabel());
 				#endif //NDEBUG
 			}	
 
@@ -114,9 +115,19 @@ namespace ed{
     	        	);
 		}
 
+		void leerVertice();
+
+		void escribirVertice();
+
+
 	}; //Fin de la clase vértice
 
 	double getDistanciaEuclidea(Vertice const & v1, Vertice const & v2);
+
+	istream &operator>>(istream &stream, ed::Vertice &v);
+
+	ostream &operator<<(ostream &stream, ed::Vertice const &v);
+
 
 
 }
