@@ -118,7 +118,7 @@ namespace ed{
 			_remakeMatrix;
 		}
 
-		void escribirGrafo();
+		void printGrafo();
 		
 	};
 }
