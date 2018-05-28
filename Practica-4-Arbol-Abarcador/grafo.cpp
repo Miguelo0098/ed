@@ -83,11 +83,11 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 				// Iteraciones para comprobar que tanto los vertices i como j son desconocidos
 				if (vertices_conocidos.size() == 0)
 				{
-					if (_matrizAdyacencia[i]*getnElements() + j] < minval)
+					if (_matrizAdyacencia[i*getnElements() + j] < minval)
 					{
 
 						// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-						minval = _matrizAdyacencia[i]*getnElements() + j];
+						minval = _matrizAdyacencia[i*getnElements() + j];
 						fila = i;
 						columna = j;
 					}
@@ -98,11 +98,11 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 					{
 						if (vertices_conocidos[k] != j
 							&& vertices_conocidos[k] != i
-							&& _matrizAdyacencia[i]*getnElements() + j] < minval)
+							&& _matrizAdyacencia[i*getnElements() + j] < minval)
 						{
 
 							// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-							minval = _matrizAdyacencia[i]*getnElements() + j];
+							minval = _matrizAdyacencia[i*getnElements() + j];
 							fila = i;
 							columna = j;
 						}	
@@ -127,4 +127,24 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 
 	return kruskalTree;
 
+}
+
+
+void ed::Grafo::printGrafo(){
+	std::cout << "VERTICES:" << std::endl;
+	for (int i = 0; i < getnVertices(); ++i)
+	{
+		std::cout << "Nº " << i << ": " << getVertice(i) << std::endl;
+	}
+
+	std::cout << "MATRIZ DE CONEXIONES:" << std::endl;
+
+	for (int i = 0; i < getnVertices(); ++i)
+	{
+		for (int j = 0; j < getnVertices(); ++j)
+		{
+			std::cout << "M[" << i << "][" << j << "]: " << _matrizAdyacencia[i]*getnElements() + j] << "\t";
+		}
+		std::cout << std::endl;
+	}
 }
