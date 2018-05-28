@@ -44,6 +44,7 @@ namespace ed{
 
 	public:
 		
+		// Constructor
 
 		inline Grafo(){
 			#ifndef NDEBUG
@@ -52,6 +53,9 @@ namespace ed{
 			#endif //NDEBUG
 		}
 		
+
+		// Observadores
+
 		inline int getnVertices(){
 			return _vertices.size();
 		}
@@ -115,7 +119,6 @@ namespace ed{
 		}
 
 		void escribirGrafo();
-
 		
 	};
 }
