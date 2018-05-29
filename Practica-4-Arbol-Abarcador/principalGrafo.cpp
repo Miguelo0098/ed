@@ -1,3 +1,16 @@
+/*!
+ \mainpage Implementación de un montículo de mediciones
+ \author   Miguel Ángel Ramírez Ruiz
+ \date     14/05/2018
+ \version  1.0
+*/
+
+/*!
+
+	\file principalGrafo.cpp
+	\brief Programa principal de la practica 4 de Estructuras de Datos
+*/
+
 #include <iostream>
 
 

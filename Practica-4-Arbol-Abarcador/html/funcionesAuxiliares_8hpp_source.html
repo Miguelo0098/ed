@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Estructuras de Datos: Fichero Fuente funcionesAuxiliares.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Estructuras de Datos
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">funcionesAuxiliares.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="funcionesAuxiliares_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef FUNCIONESAUXILIARES_HPP</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define FUNCIONESAUXILIARES_HPP</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="grafo_8hpp.html">grafo.hpp</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceed.html">ed</a>{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a546d1699e6a9b8dd8d3aa52978a38f06">menu</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#ab721f888b0603e3b89c17266391da4ea">comprobarGrafoVacio</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#ae65b25d7114683238b6fa27a285b5d36">cargarVerticesFichero</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#ae9d42df26ccd4f531d557bda2d04416f">grabarVerticesFichero</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a7b16c9cd1a986e019307158bd3f3f9a7">mostrarGrafo</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a7613cb64ea2b76aff6f9ebc9ca974532">aplicarPrim</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a1b34265d9b93569c7ac7efaf9eae4d3a">aplicarKruskal</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#aecd65d148e18319a24da065cedfecdaa">printLongitudAACM</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a499c17b5d5b7709b90ae8ada77fa3ea3">consultarVertice</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a8c968379ad2f413af8876487a3bb189f">insertarVertice</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="funcionesAuxiliares_8hpp.html#a57c21c2a8ecae1b115b7ef705ae6aafe">borrarVertice</a>(<a class="code" href="classed_1_1Grafo.html">ed::Grafo</a> &amp; grafo);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="funcionesAuxiliares_8hpp_html_a499c17b5d5b7709b90ae8ada77fa3ea3"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a499c17b5d5b7709b90ae8ada77fa3ea3">ed::consultarVertice</a></div><div class="ttdeci">void consultarVertice(ed::Grafo &amp;grafo)</div><div class="ttdoc">Muestra un vértice del grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00203">funcionesAuxiliares.cpp:203</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_aecd65d148e18319a24da065cedfecdaa"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#aecd65d148e18319a24da065cedfecdaa">ed::printLongitudAACM</a></div><div class="ttdeci">void printLongitudAACM(ed::Grafo &amp;grafo)</div><div class="ttdoc">Imprime la longitud del arbol abarcador de coste mínimo (Prim) </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00198">funcionesAuxiliares.cpp:198</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a546d1699e6a9b8dd8d3aa52978a38f06"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a546d1699e6a9b8dd8d3aa52978a38f06">ed::menu</a></div><div class="ttdeci">int menu()</div><div class="ttdoc">Muestra el menú del programa principal. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00024">funcionesAuxiliares.cpp:24</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_ae9d42df26ccd4f531d557bda2d04416f"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#ae9d42df26ccd4f531d557bda2d04416f">ed::grabarVerticesFichero</a></div><div class="ttdeci">void grabarVerticesFichero(ed::Grafo &amp;grafo)</div><div class="ttdoc">Carga los vértices de un fichero en el grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00141">funcionesAuxiliares.cpp:141</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a1b34265d9b93569c7ac7efaf9eae4d3a"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a1b34265d9b93569c7ac7efaf9eae4d3a">ed::aplicarKruskal</a></div><div class="ttdeci">void aplicarKruskal(ed::Grafo &amp;grafo)</div><div class="ttdoc">Aplica el algoritmo de Kruskal y muestra el Arbol Abarcador de coste mínimo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00188">funcionesAuxiliares.cpp:188</a></div></div>
+<div class="ttc" id="namespaceed_html"><div class="ttname"><a href="namespaceed.html">ed</a></div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8hpp_source.html#l00013">funcionesAuxiliares.hpp:13</a></div></div>
+<div class="ttc" id="classed_1_1Grafo_html"><div class="ttname"><a href="classed_1_1Grafo.html">ed::Grafo</a></div><div class="ttdoc">Definición de la clase Grafo. </div><div class="ttdef"><b>Definition:</b> <a href="grafo_8hpp_source.html#l00020">grafo.hpp:20</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a7b16c9cd1a986e019307158bd3f3f9a7"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a7b16c9cd1a986e019307158bd3f3f9a7">ed::mostrarGrafo</a></div><div class="ttdeci">void mostrarGrafo(ed::Grafo &amp;grafo)</div><div class="ttdoc">Muestra los vértices y la matriz de adyacencias del grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00168">funcionesAuxiliares.cpp:168</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a57c21c2a8ecae1b115b7ef705ae6aafe"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a57c21c2a8ecae1b115b7ef705ae6aafe">ed::borrarVertice</a></div><div class="ttdeci">void borrarVertice(ed::Grafo &amp;grafo)</div><div class="ttdoc">Borra un vértice del grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00233">funcionesAuxiliares.cpp:233</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a8c968379ad2f413af8876487a3bb189f"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a8c968379ad2f413af8876487a3bb189f">ed::insertarVertice</a></div><div class="ttdeci">void insertarVertice(ed::Grafo &amp;grafo)</div><div class="ttdoc">Inserta un vértice del grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00224">funcionesAuxiliares.cpp:224</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_ab721f888b0603e3b89c17266391da4ea"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#ab721f888b0603e3b89c17266391da4ea">ed::comprobarGrafoVacio</a></div><div class="ttdeci">void comprobarGrafoVacio(ed::Grafo &amp;grafo)</div><div class="ttdoc">Comprueba si el grafo está vacía. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00104">funcionesAuxiliares.cpp:104</a></div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_a7613cb64ea2b76aff6f9ebc9ca974532"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#a7613cb64ea2b76aff6f9ebc9ca974532">ed::aplicarPrim</a></div><div class="ttdeci">void aplicarPrim(ed::Grafo &amp;grafo)</div><div class="ttdoc">Aplica el algoritmo de Prim y muestra el Arbol Abarcador de coste mínimo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00178">funcionesAuxiliares.cpp:178</a></div></div>
+<div class="ttc" id="grafo_8hpp_html"><div class="ttname"><a href="grafo_8hpp.html">grafo.hpp</a></div><div class="ttdoc">Fichero de cabecera de la clase Grafo. </div></div>
+<div class="ttc" id="funcionesAuxiliares_8hpp_html_ae65b25d7114683238b6fa27a285b5d36"><div class="ttname"><a href="funcionesAuxiliares_8hpp.html#ae65b25d7114683238b6fa27a285b5d36">ed::cargarVerticesFichero</a></div><div class="ttdeci">void cargarVerticesFichero(ed::Grafo &amp;grafo)</div><div class="ttdoc">Carga los vertices de un fichero en el grafo. </div><div class="ttdef"><b>Definition:</b> <a href="funcionesAuxiliares_8cpp_source.html#l00114">funcionesAuxiliares.cpp:114</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

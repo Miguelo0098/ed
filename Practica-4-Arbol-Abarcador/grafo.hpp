@@ -15,11 +15,26 @@
 #include <vector>
 
 namespace ed{
-	class Grafo{
-	private:
-		std::vector<ed::Vertice> _vertices;
-		std::vector<double> _matrizAdyacencia;
 
+	//!  Definición de la clase Grafo
+	class Grafo{
+
+	 //! \name Atributos privados de la clase Grafo
+	private:
+		std::vector<ed::Vertice> _vertices;		 //!< vector de vértices
+		std::vector<double> _matrizAdyacencia;	 //!< matriz de adyacencias
+
+
+		//! \name Funciones o métodos privados de la clase Grafo
+
+		/*! 
+			\brief     Funcion que añade un vertice al vector de vertices
+			\note      Función inline
+			\note	   No modifica la matriz de adyacencias
+			\param	   v: vértice a insertar
+			\pre       none
+			\post      none
+		*/
 		inline void _justAddVertice(ed::Vertice & v){
 			if (hasVertice(v) == false)
 			{
@@ -28,6 +43,13 @@ namespace ed{
 			}
 		}
 
+		/*! 
+			\brief     Funcion que reajusta la matriz de adyacencias
+			\note      Función inline
+			\note	   La matriz queda totalmente conexa
+			\pre       none
+			\post      none
+		*/
 		inline void _remakeMatrix(){
 			_matrizAdyacencia.resize(getnVertices()*getnVertices());
 			for (unsigned int i = 0; i < getnVertices(); ++i)
@@ -40,10 +62,16 @@ namespace ed{
 			}
 		}
 
-
+	//! \name Métodos públicos de la clase Grafo
 	public:
 		
-		// Constructor
+		/*! 
+			\brief     Constructor que crea un grafo vacio
+			\note      Función inline
+			\pre       Ninguna
+			\post      isEmpty() == true
+		*/
+
 
 		inline Grafo(){
 			#ifndef NDEBUG
@@ -53,12 +81,28 @@ namespace ed{
 		}
 		
 
-		// Observadores
+		//! \name Observadores
 
+
+		/*!
+    	    \brief  Funcion que retorna el número de vértices del grafo
+			\note   Función inline
+			\pre    Ninguna
+			\post   Ninguna
+    	    \return número de vértices (tipo unsigned int)
+    	*/
 		inline unsigned int getnVertices(){
 			return _vertices.size();
 		}
 
+
+		/*!
+    	    \brief  Comprueba si el grafo está vacio
+    	    \note   Función inline
+			\pre    none
+			\post   none
+    	    \return true, si el grafo está vacio; false, en caso contrario
+    	*/
 		inline bool isEmpty(){
 			if (_vertices.empty() == true)
 			{
@@ -67,6 +111,15 @@ namespace ed{
 			return false;
 		}
 
+
+		/*!
+    	    \brief  Comprueba si el vértice está dentro del grafo
+    	    \note   Función inline
+    	    \param	v: Vertice a buscar en el grafo
+			\pre    none
+			\post   none
+    	    \return true, si el vértice está en el grafo; false, en caso contrario
+    	*/
 		inline bool hasVertice(ed::Vertice & v){
 			for (std::vector<ed::Vertice>::iterator i = _vertices.begin(); i != _vertices.end(); ++i)
 			{
@@ -79,6 +132,15 @@ namespace ed{
 			return false;
 		}
 
+
+		/*!
+    	    \brief  Función que devuelve el Vértice iesimo del grafo
+    	    \note   Función inline
+    	    \param	i: indice del vértice en el vector de vertices (tipo unsigned int)
+			\pre    isEmpty() == false; i >= 0; i < _vertices.size()
+			\post   none
+    	    \return vértice indicado por el indice i
+    	*/
 		inline ed::Vertice & getVertice(unsigned int i){
 			#ifndef NDEBUG
 				// Se comprueba la precondicion
@@ -89,11 +151,33 @@ namespace ed{
 
 			return _vertices[i];
 		}
+		
 
+		/*!
+    	    \brief  Funcion que retorna el Árbol Abarcador de coste mínimo con el algoritmo de Prim
+			\pre    Ninguna
+			\post   Ninguna
+    	    \return Grafo abarcador de coste mínimo
+    	*/
 		ed::Grafo getPrimTree();
+		
 
+		/*!
+    	    \brief  Funcion que retorna el Árbol Abarcador de coste mínimo con el algoritmo de Kruskal
+			\pre    Ninguna
+			\post   Ninguna
+    	    \return Grafo abarcador de coste mínimo
+    	*/
 		ed::Grafo getKruskalTree();
 
+
+		/*!
+    	    \brief  Funcion que retorna la longitud total de todos los lados del grafo
+			\note	Funcion inline
+			\pre    Ninguna
+			\post   Ninguna
+    	    \return Grafo abarcador de coste mínimo
+    	*/
 		inline double getLongitudGrafo(){
 			double retval = 0.0;
 			if (isEmpty() == true)
@@ -114,8 +198,16 @@ namespace ed{
 			return retval;
 		}
 
-		//Modificadores
+		//! \name Operaciones de modificación
 
+
+		/*!
+    	    \brief  Funcion que añade un vértice al grafo
+    	    \note	Funcion inline
+    	    \param	vertice: vértice a insertar
+			\pre    Ninguna
+			\post   isEmprty() == false
+    	*/
 		inline void addVertex(ed::Vertice & vertice){
 			_justAddVertice(vertice);
 			_remakeMatrix();
@@ -125,6 +217,13 @@ namespace ed{
 			#endif //NDEBUG
 		}
 
+		/*!
+    	    \brief  Funcion que borra el vértice iesimo del grafo
+    	    \note	Funcion inline
+    	    \param	i: indice del vertice a borrar
+			\pre    isEmpty() == false; i >= 0; i < _vertices.size()
+			\post   None
+    	*/
 		inline void removeVertex(unsigned int i){
 			#ifndef NDEBUG
 				// Se comprueba la precondicion
@@ -137,7 +236,12 @@ namespace ed{
 			_remakeMatrix();
 		}
 
-
+		/*!
+    	    \brief  Funcion que borra todos los vértices del grafo
+    	    \note	Funcion inline
+			\pre    isEmpty() == false
+			\post   isEmpty() == true
+    	*/
 		inline void removeAll(){
 			#ifndef NDEBUG
 				// Se comprueba la precondicion
@@ -146,8 +250,17 @@ namespace ed{
 
 			_vertices.clear();
 			_remakeMatrix();
+			#ifndef NDEBUG
+				// Se comprueba la postcondicion
+				assert(isEmpty() == true);
+			#endif //NDEBUG
 		}
 
+		/*!
+    	    \brief  Funcion que imprime los datos del grafo
+			\pre    None
+			\post   None
+    	*/
 		void printGrafo();
 		
 	};

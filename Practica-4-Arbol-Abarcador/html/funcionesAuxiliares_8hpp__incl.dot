@@ -1,0 +1,21 @@
+digraph "funcionesAuxiliares.hpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="funcionesAuxiliares.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="grafo.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$grafo_8hpp.html",tooltip="Fichero de cabecera de la clase Grafo. "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="vertice.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vertice_8hpp.html",tooltip="Fichero de cabecera de la clase Vertice. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="cassert",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="cmath",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}
