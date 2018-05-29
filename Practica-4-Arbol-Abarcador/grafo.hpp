@@ -94,6 +94,26 @@ namespace ed{
 
 		ed::Grafo getKruskalTree();
 
+		inline double getLongitudGrafo(){
+			double retval = 0.0;
+			if (isEmpty() == true)
+			{
+				return retval;
+			}
+			for (unsigned int i = 0; i < getnVertices(); ++i)
+			{
+				for (unsigned int j = 0; j < getnVertices(); ++j)
+				{
+					if (i <= j)
+					{
+						retval = retval + _matrizAdyacencia[i*getnVertices() + j];
+					}
+				}
+			}
+
+			return retval;
+		}
+
 		//Modificadores
 
 		inline void addVertex(ed::Vertice & vertice){
@@ -116,6 +136,7 @@ namespace ed{
 			_vertices.erase(_vertices.begin() + i);
 			_remakeMatrix();
 		}
+
 
 		inline void removeAll(){
 			#ifndef NDEBUG

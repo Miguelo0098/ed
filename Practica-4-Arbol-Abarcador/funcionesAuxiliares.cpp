@@ -196,7 +196,7 @@ void ed::aplicarKruskal(ed::Grafo & grafo){
 
 
 void ed::printLongitudAACM(ed::Grafo & grafo){
-
+	std::cout << "La longitud del Árbol Abarcador de Coste Mínimo es " << grafo.getPrimTree().getLongitudGrafo() << std::endl;
 }
 
 

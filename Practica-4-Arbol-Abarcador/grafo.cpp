@@ -27,19 +27,22 @@ ed::Grafo ed::Grafo::getPrimTree(){
 			// Iteraciones de lados de los nodos conocidos
 			for (unsigned int j = 0; j < getnVertices(); ++j)
 			{
-
+				int conocido = 0;
 				// Iteraciones para comprobar que el vertice j es desconocido
 				for (unsigned int k = 0; k < vertices_conocidos.size(); ++k)
 				{
-					if (vertices_conocidos[k] != j
-						&& _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j] < minval)
+					if (vertices_conocidos[k] == j)
 					{
-
-						// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-						minval = _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j];
-						fila = vertices_conocidos[i];
-						columna = j;
+						conocido = 1;
 					}
+				}
+
+				if (conocido == 0 && _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j] < minval)
+				{
+					// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
+					minval = _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j];
+					fila = vertices_conocidos[i];
+					columna = j;
 				}
 			}
 		}
@@ -71,6 +74,8 @@ ed::Grafo ed::Grafo::getKruskalTree(){
 		double minval = DBL_MAX;
 		unsigned int fila = -1;
 		unsigned int columna = -1;
+		int insertunknown_i = 0;
+		int insertunknown_j = 0;
 
 		// Iteraciones de filas
 		for (unsigned int i = 0; i < getnVertices(); ++i)
@@ -81,34 +86,46 @@ ed::Grafo ed::Grafo::getKruskalTree(){
 			{
 
 				// Iteraciones para comprobar que tanto los vertices i como j son desconocidos
+				int conocido_i = 0;
+				int conocido_j = 0;
+
+				for (unsigned int k = 0; k < vertices_conocidos.size(); ++k)
+				{
+					if (vertices_conocidos[k] == i)
+					{
+						conocido_i = 1;
+					}
+					if (vertices_conocidos[k] == j)
+					{
+						conocido_j = 1;
+					}
+				}
+
 				if (vertices_conocidos.size() == 0)
 				{
-					if (_matrizAdyacencia[i*getnVertices() + j] < minval)
+					if ((conocido_i == 0 || conocido_j == 0)
+						&& _matrizAdyacencia[i*getnVertices() + j] < minval
+						&& _matrizAdyacencia[i*getnVertices() + j] > 0)
 					{
-
-						// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
 						minval = _matrizAdyacencia[i*getnVertices() + j];
 						fila = i;
 						columna = j;
+						insertunknown_i = conocido_i;
+						insertunknown_j = conocido_j;
 					}
 				}
-
 				else{
-					for (unsigned int k = 0; k < vertices_conocidos.size(); ++k)
+					if (((conocido_i == 0) ^ (conocido_j == 0))
+						&& _matrizAdyacencia[i*getnVertices() + j] < minval
+						&& _matrizAdyacencia[i*getnVertices() + j] > 0)
 					{
-						if (vertices_conocidos[k] != j
-							&& vertices_conocidos[k] != i
-							&& _matrizAdyacencia[i*getnVertices() + j] < minval)
-						{
-
-							// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-							minval = _matrizAdyacencia[i*getnVertices() + j];
-							fila = i;
-							columna = j;
-						}	
+						minval = _matrizAdyacencia[i*getnVertices() + j];
+						fila = i;
+						columna = j;
+						insertunknown_i = conocido_i;
+						insertunknown_j = conocido_j;
 					}
 				}
-
 				
 			}
 		}
@@ -116,12 +133,19 @@ ed::Grafo ed::Grafo::getKruskalTree(){
 		// Guardamos los valores en la matriz del grafo a retornar.
 		kruskalTree._matrizAdyacencia[fila*kruskalTree.getnVertices() + columna] = _matrizAdyacencia[fila*kruskalTree.getnVertices() + columna];
 		kruskalTree._matrizAdyacencia[columna*kruskalTree.getnVertices() + fila] = _matrizAdyacencia[columna*kruskalTree.getnVertices() + fila];
-		if (vertices_conocidos.size() == 0)
+		if (insertunknown_i == 0 || insertunknown_j == 0)
 		{
-			vertices_conocidos.push_back(fila);
+			if (insertunknown_i == 0)
+			{
+				vertices_conocidos.push_back(fila);
+			}
+			if (insertunknown_j == 0)
+			{
+				vertices_conocidos.push_back(columna);
+			}
 		}
 
-		vertices_conocidos.push_back(columna);
+		
 		
 	}
 
