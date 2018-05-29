@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cfloat>
 
-ed::Grafo & ed::Grafo::getPrimTree(){
+ed::Grafo ed::Grafo::getPrimTree(){
 
 	// Creación del grafo a retornar
 	ed::Grafo primTree;
@@ -12,31 +12,31 @@ ed::Grafo & ed::Grafo::getPrimTree(){
 	primTree._matrizAdyacencia.assign(primTree._matrizAdyacencia.size(), 0.0); // Matriz vacia a rellenar
 
 	// Vector con vertices conocidos (insertamos el primero)
-	std::vector<int> vertices_conocidos;
+	std::vector<unsigned int> vertices_conocidos;
 	vertices_conocidos.push_back(0);
 
 	while(vertices_conocidos.size() < getnVertices()){
 		double minval = DBL_MAX;
-		int fila = -1;
-		int columna = -1;
+		unsigned int fila = -1;
+		unsigned int columna = -1;
 
 		// Iteraciones de vertices conocidos
-		for (int i = 0; i < vertices_conocidos.size(); ++i)
+		for (unsigned int i = 0; i < vertices_conocidos.size(); ++i)
 		{
 
 			// Iteraciones de lados de los nodos conocidos
-			for (int j = 0; j < getnVertices(); ++j)
+			for (unsigned int j = 0; j < getnVertices(); ++j)
 			{
 
 				// Iteraciones para comprobar que el vertice j es desconocido
-				for (int k = 0; k < vertices_conocidos.size(); ++k)
+				for (unsigned int k = 0; k < vertices_conocidos.size(); ++k)
 				{
-					if (vertices_usados[k] != j
-						&& _matrizAdyacencia[vertices_conocidos[i]*getnElements() + j] < minval)
+					if (vertices_conocidos[k] != j
+						&& _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j] < minval)
 					{
 
 						// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-						minval = _matrizAdyacencia[vertices_conocidos[i]*getnElements() + j];
+						minval = _matrizAdyacencia[vertices_conocidos[i]*getnVertices() + j];
 						fila = vertices_conocidos[i];
 						columna = j;
 					}
@@ -45,8 +45,8 @@ ed::Grafo & ed::Grafo::getPrimTree(){
 		}
 
 		// Guardamos los valores en la matriz del grafo a retornar.
-		primTree._matrizAdyacencia[fila*primTree.getnElements() + columna] = _matrizAdyacencia[fila*primTree.getnElements() + columna];
-		primTree._matrizAdyacencia[columna*primTree.getnElements() + fila] = _matrizAdyacencia[columna*primTree.getnElements() + fila];
+		primTree._matrizAdyacencia[fila*primTree.getnVertices() + columna] = _matrizAdyacencia[fila*primTree.getnVertices() + columna];
+		primTree._matrizAdyacencia[columna*primTree.getnVertices() + fila] = _matrizAdyacencia[columna*primTree.getnVertices() + fila];
 		vertices_conocidos.push_back(columna);
 
 	}
@@ -56,7 +56,7 @@ ed::Grafo & ed::Grafo::getPrimTree(){
 }
 
 
-ed::Grafo & ed::Grafo::getKruskalTree(){
+ed::Grafo ed::Grafo::getKruskalTree(){
 
 	// Creación del grafo a retornar
 	ed::Grafo kruskalTree;
@@ -65,44 +65,44 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 	kruskalTree._matrizAdyacencia.assign(kruskalTree._matrizAdyacencia.size(), 0.0); // Matriz vacia a rellenar
 
 	// Vector con vertices conocidos (insertamos el primero)
-	std::vector<int> vertices_conocidos;
+	std::vector<unsigned int> vertices_conocidos;
 
 	while(vertices_conocidos.size() < getnVertices()){
 		double minval = DBL_MAX;
-		int fila = -1;
-		int columna = -1;
+		unsigned int fila = -1;
+		unsigned int columna = -1;
 
 		// Iteraciones de filas
-		for (int i = 0; i < getnVertices(); ++i)
+		for (unsigned int i = 0; i < getnVertices(); ++i)
 		{
 
 			// Iteraciones de columnas
-			for (int j = 0; j < getnVertices(); ++j)
+			for (unsigned int j = 0; j < getnVertices(); ++j)
 			{
 
 				// Iteraciones para comprobar que tanto los vertices i como j son desconocidos
 				if (vertices_conocidos.size() == 0)
 				{
-					if (_matrizAdyacencia[i*getnElements() + j] < minval)
+					if (_matrizAdyacencia[i*getnVertices() + j] < minval)
 					{
 
 						// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-						minval = _matrizAdyacencia[i*getnElements() + j];
+						minval = _matrizAdyacencia[i*getnVertices() + j];
 						fila = i;
 						columna = j;
 					}
 				}
 
 				else{
-					for (int k = 0; k < vertices_conocidos.size(); ++k)
+					for (unsigned int k = 0; k < vertices_conocidos.size(); ++k)
 					{
 						if (vertices_conocidos[k] != j
 							&& vertices_conocidos[k] != i
-							&& _matrizAdyacencia[i*getnElements() + j] < minval)
+							&& _matrizAdyacencia[i*getnVertices() + j] < minval)
 						{
 
 							// Se actualiza el valor del lado mas corto y se busca los nodos origen y destino
-							minval = _matrizAdyacencia[i*getnElements() + j];
+							minval = _matrizAdyacencia[i*getnVertices() + j];
 							fila = i;
 							columna = j;
 						}	
@@ -114,8 +114,8 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 		}
 
 		// Guardamos los valores en la matriz del grafo a retornar.
-		kruskalTree._matrizAdyacencia[fila*kruskalTree.getnElements() + columna] = _matrizAdyacencia[fila*kruskalTree.getnElements() + columna];
-		kruskalTree._matrizAdyacencia[columna*kruskalTree.getnElements() + fila] = _matrizAdyacencia[columna*kruskalTree.getnElements() + fila];
+		kruskalTree._matrizAdyacencia[fila*kruskalTree.getnVertices() + columna] = _matrizAdyacencia[fila*kruskalTree.getnVertices() + columna];
+		kruskalTree._matrizAdyacencia[columna*kruskalTree.getnVertices() + fila] = _matrizAdyacencia[columna*kruskalTree.getnVertices() + fila];
 		if (vertices_conocidos.size() == 0)
 		{
 			vertices_conocidos.push_back(fila);
@@ -132,18 +132,18 @@ ed::Grafo & ed::Grafo::getKruskalTree(){
 
 void ed::Grafo::printGrafo(){
 	std::cout << "VERTICES:" << std::endl;
-	for (int i = 0; i < getnVertices(); ++i)
+	for (unsigned int i = 0; i < getnVertices(); ++i)
 	{
 		std::cout << "Nº " << i << ": " << getVertice(i) << std::endl;
 	}
 
 	std::cout << "MATRIZ DE CONEXIONES:" << std::endl;
 
-	for (int i = 0; i < getnVertices(); ++i)
+	for (unsigned int i = 0; i < getnVertices(); ++i)
 	{
-		for (int j = 0; j < getnVertices(); ++j)
+		for (unsigned int j = 0; j < getnVertices(); ++j)
 		{
-			std::cout << "M[" << i << "][" << j << "]: " << _matrizAdyacencia[i]*getnElements() + j] << "\t";
+			std::cout << "M[" << i << "][" << j << "]: " << _matrizAdyacencia[i*getnVertices() + j] << "\t";
 		}
 		std::cout << std::endl;
 	}

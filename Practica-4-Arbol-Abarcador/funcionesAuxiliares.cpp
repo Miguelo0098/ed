@@ -123,7 +123,11 @@ void ed::cargarVerticesFichero(ed::Grafo & grafo){
 		std::cout << "ERROR: no se pudo cargar el fichero." << std::endl;
 		return;
 	}
-	grafo.removeAll();
+
+	if (grafo.isEmpty() == false)
+	{
+		grafo.removeAll();
+	}
 	ed::Vertice aux;
 	while(flujo_entrada >> aux){
 		grafo.addVertex(aux);
@@ -149,7 +153,7 @@ void ed::grabarVerticesFichero(ed::Grafo & grafo){
 	}
 	if (grafo.isEmpty() == false)
 	{
-		for (int i = 0; i < grafo.getnVertices(); ++i)
+		for (unsigned int i = 0; i < grafo.getnVertices(); ++i)
 		{
 			salida << grafo.getVertice(i) << std::endl;
 		}
@@ -172,12 +176,22 @@ void ed::mostrarGrafo(ed::Grafo & grafo){
 
 
 void ed::aplicarPrim(ed::Grafo & grafo){
-
+	if (grafo.isEmpty() == true)
+	{
+		std::cout << "ERROR: no se puede obtener el Arbol Abarcador de coste mínimo de un grafo vacío." << std::endl;
+		return;
+	}
+	grafo.getPrimTree().printGrafo();
 }
 
 
 void ed::aplicarKruskal(ed::Grafo & grafo){
-
+	if (grafo.isEmpty() == true)
+	{
+		std::cout << "ERROR: no se puede obtener el Arbol Abarcador de coste mínimo de un grafo vacío." << std::endl;
+		return;
+	}
+	grafo.getKruskalTree().printGrafo();
 }
 
 
@@ -187,15 +201,53 @@ void ed::printLongitudAACM(ed::Grafo & grafo){
 
 
 void ed::consultarVertice(ed::Grafo & grafo){
+	if (grafo.isEmpty() == true)
+	{
+		std::cout << "ERROR: el grafo está vacío." << std::endl;
+		return;
+	}
+	unsigned int i = 0;
+	std::cout << "Introduzca el indice del vértice (0 por defecto): " << std::endl;
+	std::cin >> i;
+	getchar();
 
+	if (i < grafo.getnVertices() && i >= 0)
+	{
+		std::cout << "Vertice nº " << i << ": " << grafo.getVertice(i) << std::endl;
+	}
+	else{
+		std::cout << "ERROR: no existe dicho vertice." << std::endl;
+	}
 }
 
 
 void ed::insertarVertice(ed::Grafo & grafo){
-
+	ed::Vertice nuevo;
+	nuevo.leerVertice();
+	std::cout << "Insertando vértice..." << std::endl;
+	grafo.addVertex(nuevo);
+	std::cout << "Vertice insertado con éxito!" << std::endl;
 }
 
 
 void ed::borrarVertice(ed::Grafo & grafo){
+	if (grafo.isEmpty() == true)
+	{
+		std::cout << "ERROR: el grafo está vacío." << std::endl;
+		return;
+	}
+	unsigned int i = 0;
+	std::cout << "Introduzca el indice del vértice a borrar (0 por defecto): " << std::endl;
+	std::cin >> i;
+	getchar();
 
+	if (i < grafo.getnVertices() && i >= 0)
+	{
+		std::cout << "Borrando vértice..." << std::endl;
+		grafo.removeVertex(i);
+		std::cout << "Vertice borrado con éxito!" << std::endl;
+	}
+	else{
+		std::cout << "ERROR: no existe dicho vertice." << std::endl;
+	}
 }

@@ -30,9 +30,9 @@ namespace ed{
 
 		inline void _remakeMatrix(){
 			_matrizAdyacencia.resize(getnVertices()*getnVertices());
-			for (int i = 0; i < getnVertices(); ++i)
+			for (unsigned int i = 0; i < getnVertices(); ++i)
 			{
-				for (int j = 0; j < getnVertices(); ++j)
+				for (unsigned int j = 0; j < getnVertices(); ++j)
 				{
 
 					_matrizAdyacencia[(i * getnVertices()) + j] = getDistanciaEuclidea(_vertices[i], _vertices[j]);
@@ -55,7 +55,7 @@ namespace ed{
 
 		// Observadores
 
-		inline int getnVertices(){
+		inline unsigned int getnVertices(){
 			return _vertices.size();
 		}
 
@@ -79,7 +79,7 @@ namespace ed{
 			return false;
 		}
 
-		inline ed::Vertice & getVertice(int i){
+		inline ed::Vertice & getVertice(unsigned int i){
 			#ifndef NDEBUG
 				// Se comprueba la precondicion
 				assert(isEmpty() == false);
@@ -90,9 +90,9 @@ namespace ed{
 			return _vertices[i];
 		}
 
-		ed::Grafo & getPrimTree();
+		ed::Grafo getPrimTree();
 
-		ed::Grafo & getKruskalTree();
+		ed::Grafo getKruskalTree();
 
 		//Modificadores
 
@@ -105,7 +105,7 @@ namespace ed{
 			#endif //NDEBUG
 		}
 
-		inline void removeVertex(int i){
+		inline void removeVertex(unsigned int i){
 			#ifndef NDEBUG
 				// Se comprueba la precondicion
 				assert(isEmpty() == false);

@@ -49,15 +49,15 @@ namespace ed{
         	#endif //NDEBUG
 		}
 
-		inline double getX(){
+		inline double getX()const{
 			return _x;
 		}
 
-		inline double getY(){
+		inline double getY()const{
 			return _y;
 		}
 
-		inline int getLabel(){
+		inline int getLabel()const{
 			return _label;
 		}
 
@@ -85,7 +85,7 @@ namespace ed{
         	#endif //NDEBUG
 		}
 		
-		inline vertice & operator=(ed::vertice const &v)
+		inline Vertice & operator=(ed::Vertice const &v)
 		{
 			// Se comprueba que no sean el mismo objeto
 			if (this != &v) 
@@ -106,7 +106,7 @@ namespace ed{
 		}
 		
 
-		inline bool operator == (ed::Vertice2D const &v) const
+		inline bool operator ==(ed::Vertice const &v) const
 		{
   			// Se utiliza COTA_ERROR para controlar la precisión de los números reales
     		return 	(
