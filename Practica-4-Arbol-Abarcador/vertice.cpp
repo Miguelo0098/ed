@@ -46,11 +46,9 @@ namespace ed{
 	}
 
 	ostream &operator<<(ostream &stream, ed::Vertice const &v){
-		std::cout << "(";
   		stream << v.getX();
-  		stream << ", ";
+  		stream << " ";
   		stream << v.getY();
-  		std::cout << ")";
 
   		return stream;
 	}

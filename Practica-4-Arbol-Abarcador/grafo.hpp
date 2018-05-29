@@ -18,7 +18,6 @@ namespace ed{
 	class Grafo{
 	private:
 		std::vector<ed::Vertice> _vertices;
-		la matriz
 		std::vector<double> _matrizAdyacencia;
 
 		inline void _justAddVertice(ed::Vertice & v){
@@ -115,7 +114,17 @@ namespace ed{
 			#endif //NDEBUG
 
 			_vertices.erase(_vertices.begin() + i);
-			_remakeMatrix;
+			_remakeMatrix();
+		}
+
+		inline void removeAll(){
+			#ifndef NDEBUG
+				// Se comprueba la precondicion
+				assert(isEmpty() == false);
+			#endif //NDEBUG
+
+			_vertices.clear();
+			_remakeMatrix();
 		}
 
 		void printGrafo();

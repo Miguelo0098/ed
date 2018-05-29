@@ -1,4 +1,4 @@
-NAME=principalMonticulo2
+NAME=principalGrafo
 
 #
 OBJECTS = $(NAME).o funcionesAuxiliares.o grafo.o vertice.o

@@ -12,7 +12,7 @@
 #include <cassert>
 #include <cmath>
 
-define COTA_ERROR 1.0e-6
+#define COTA_ERROR 1.0e-6
 
 using std::istream;
 using std::ostream;
@@ -23,7 +23,7 @@ namespace ed{
 	private:
 		double _x;
 		double _y;
-		int _label
+		int _label;
 
 
 	public:
